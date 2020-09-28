@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import rootReducer from "./rootReducer";
+import { userLoggedIn } from "./actions/auth";
 
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
@@ -15,6 +16,13 @@ const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
 );
+
+if (localStorage.bookrecommendJWT) {
+  const user = {
+    token: localStorage.bookrecommendJWT,
+  };
+  store.dispatch(userLoggedIn(user));
+}
 
 ReactDOM.render(
   <Router>
