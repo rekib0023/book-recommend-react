@@ -51,9 +51,6 @@ class SignupPage extends React.Component {
           <SignupForm submit={this.submit} />
         </div>
       </div>
-
-      // <div>
-      // </div>
     );
   }
 }

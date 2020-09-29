@@ -35,20 +35,16 @@ class SignupForm extends React.Component {
 
   validate = (data) => {
     const errors = {};
-
     if (!isEmail(data.email)) errors.email = "Invalid email";
     if (!data.password) errors.password = "Can't be blank";
     if (!data.username) errors.username = "Can't be blank";
     if (!data.fullname) errors.fullname = "Can't be blank";
-
     return errors;
   };
 
   render() {
     const { data, errors, loading } = this.state;
     return (
-
-
       <div style={{ width: "45%" }}>
             <h1>Sign up to SOMETHING</h1>
             <div className="w-100 d-flex justify-content-between mb-3">
@@ -145,12 +141,6 @@ class SignupForm extends React.Component {
               </button>
             </form>
           </div>
-
-
-
-
-
-      
     );
   }
 }
