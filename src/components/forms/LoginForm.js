@@ -70,7 +70,7 @@ export default class LoginForm extends Component {
               type="password"
               id="password"
               name="password"
-              placeholder="example@example.com"
+              placeholder="Make it secure"
               value={data.password}
               onChange={this.onChange}
             />
