@@ -8,7 +8,7 @@ import UserRoute from "./components/routes/UserRoute";
 import GuestRoute from "./components/routes/GuestRoute";
 
 const App = ({ location }) => (
-  <div className="ui container">
+  <div className="container-fluid">
     <Route location={location} path="/" exact component={HomePage} />
     <Route location={location} path="/home" exact component={HomePage} />
     <GuestRoute location={location} path="/login" exact component={LoginPage} />
