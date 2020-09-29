@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import isEmail from "validator/lib/isEmail";
 import InlineError from "../messages/InlineError";
 
@@ -48,45 +47,9 @@ class SignupForm extends React.Component {
   render() {
     const { data, errors, loading } = this.state;
     return (
-      <div className="row" style={{ height: "100vh" }}>
-        <div className="col-md center-content text-white gradient-component">
-          <div style={{ width: "75%" }} className="text-center">
-            <h1>Welcome Back!</h1>
-            <p>
-              To keep connected with us please login with your personal info
-            </p>
-            <Link to="/login" className="btn btn-outline-light">
-              Login
-            </Link>
-          </div>
-        </div>
-        <div className="col-md-8 center-content form-component p-0 m-0">
-          <img
-          className="p-0 m-0"
-            src={require("../../assets/blob.svg")}
-            style={{
-              position: "absolute",
-              bottom: "60px",
-              left: "0px",
-              height: "70%",
-              zIndex: "-1",
-              opacity: "0.2"
-            }}
-          />
-          <img
-          className="p-0 m-0"
-            src={require("../../assets/blob2.svg")}
-            style={{
-              display: "flex",
-              position: "absolute",
-              top: "10px",
-              right: "20px",
-              height: "60%",
-              zIndex: "-1",
-              opacity: "0.9"
-            }}
-          />
-          <div style={{ width: "45%" }}>
+
+
+      <div style={{ width: "45%" }}>
             <h1>Sign up to SOMETHING</h1>
             <div className="w-100 d-flex justify-content-between mb-3">
               <a className="btn w-75 d-flex align-items-center icon-btn-block p-3">
@@ -182,8 +145,12 @@ class SignupForm extends React.Component {
               </button>
             </form>
           </div>
-        </div>
-      </div>
+
+
+
+
+
+      
     );
   }
 }
