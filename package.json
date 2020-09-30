@@ -40,5 +40,5 @@
   "devDependencies": {
     "redux-devtools-extension": "^2.13.8"
   },
-  "proxy": "http://bookrecommendnodebackend-env.eba-fha759uc.us-east-2.elasticbeanstalk.com/"
+  "proxy": "http://localhost:8080"
 }
