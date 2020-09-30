@@ -51,7 +51,7 @@ class LoginPage extends Component {
             style={{
               position: "absolute",
               top: "20px",
-              right: "20px",
+              right: "40px",
             }}
           >
             <span aria-hidden="true" style={{ fontSize: "40px", fontWeight: "bolder" }}>

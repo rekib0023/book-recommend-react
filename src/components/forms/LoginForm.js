@@ -72,6 +72,12 @@ export default class LoginForm extends Component {
           -- or --
         </div>
         <form onSubmit={this.onSubmit}>
+          {errors.global && (
+            <Message negative>
+              <Message.Header>Something went wrong</Message.Header>
+              <p>{errors.global}</p>
+            </Message>
+          )}
           <div className="form-group">
             <label htmlFor="email" className="mb-3">
               Email

@@ -19,7 +19,7 @@ class SignupPage extends React.Component {
             style={{
               position: "absolute",
               top: "20px",
-              left: "20px",
+              left: "40px",
             }}
           >
             <span

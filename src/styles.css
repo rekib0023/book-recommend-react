@@ -38,3 +38,8 @@ label {
   background-color: #e63946 !important;
   color: white;
 }
+
+.landing-page-component {
+  background-color: #735eeb;
+  height: 80vh;
+}
