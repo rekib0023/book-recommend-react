@@ -12,6 +12,23 @@ class SignupPage extends React.Component {
     return (
       <div className="row" style={{ height: "100vh" }}>
         <div className="col-md center-content text-white gradient-component">
+          <Link
+            to="/"
+            className="close"
+            aria-label="Close"
+            style={{
+              position: "absolute",
+              top: "20px",
+              left: "20px",
+            }}
+          >
+            <span
+              aria-hidden="true"
+              style={{ fontSize: "40px", fontWeight: "bolder" }}
+            >
+              &times;
+            </span>
+          </Link>
           <div style={{ width: "75%" }} className="text-center">
             <h1>Welcome Back!</h1>
             <p>
@@ -28,11 +45,13 @@ class SignupPage extends React.Component {
             src={require("../../assets/blob.svg")}
             style={{
               position: "absolute",
-              bottom: "60px",
-              left: "0px",
-              height: "70%",
+              top: "-210px",
+              left: "-230px",
+              height: "100%",
               zIndex: "-1",
               opacity: "0.2",
+              objectFit: "none",
+              objectPosition: "5px 10%",
             }}
           />
           <img
@@ -41,11 +60,13 @@ class SignupPage extends React.Component {
             style={{
               display: "flex",
               position: "absolute",
-              top: "10px",
-              right: "20px",
-              height: "60%",
+              top: "0px",
+              right: "-220px",
+              height: "100%",
               zIndex: "-1",
               opacity: "0.9",
+              objectFit: "none",
+              objectPosition: "5px 10%",
             }}
           />
           <SignupForm submit={this.submit} />

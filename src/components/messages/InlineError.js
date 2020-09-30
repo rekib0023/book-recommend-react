@@ -1,7 +1,7 @@
 import React from "react";
 
 const InlineError = ({ text }) => {
-  return <span style={{ color: "#ae5856" }}>{text}</span>;
+  return <span style={{ color: "#e63946", fontWeight: "bold" }}>{text}</span>;
 };
 
 export default InlineError;

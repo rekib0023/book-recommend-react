@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Form, Button, Message } from "semantic-ui-react";
 import isEmail from "validator/lib/isEmail";
 import InlineError from "../messages/InlineError";
 
@@ -46,101 +48,106 @@ class SignupForm extends React.Component {
     const { data, errors, loading } = this.state;
     return (
       <div style={{ width: "45%" }}>
-            <h1>Sign up to SOMETHING</h1>
-            <div className="w-100 d-flex justify-content-between mb-3">
-              <a className="btn w-75 d-flex align-items-center icon-btn-block p-3">
-                <img
-                  src={require("../../assets/icons/search.svg")}
-                  height="20px"
-                  className="float-left"
-                />
-                <span className="mx-auto">Sign up with Google</span>
-              </a>
-              <a className="btn btn-secondary h-100 icon-btn p-3">
-                <img
-                  src={require("../../assets/icons/facebook.svg")}
-                  height="20px"
-                />
-              </a>
-              <a className="btn btn-secondary h-100 icon-btn p-3">
-                <img
-                  src={require("../../assets/icons/twitter.svg")}
-                  height="20px"
-                />
-              </a>
+        <h1>Sign up to SOMETHING</h1>
+        <div className="w-100 d-flex justify-content-between mb-3">
+          <a className="btn w-75 d-flex align-items-center icon-btn-block p-3">
+            <img
+              src={require("../../assets/icons/search.svg")}
+              height="20px"
+              className="float-left"
+            />
+            <span className="mx-auto">Sign up with Google</span>
+          </a>
+          <a className="btn btn-secondary h-100 icon-btn p-3">
+            <img
+              src={require("../../assets/icons/facebook.svg")}
+              height="20px"
+            />
+          </a>
+          <a className="btn btn-secondary h-100 icon-btn p-3">
+            <img
+              src={require("../../assets/icons/twitter.svg")}
+              height="20px"
+            />
+          </a>
+        </div>
+        <div className="text-center mb-3" style={{ color: "#797979" }}>
+          -- or --
+        </div>
+        <form onSubmit={this.onSubmit}>
+          <div className="row m-0">
+            <div className="form-group col-6 p-0 pr-2">
+              <label htmlFor="fullname" className="mb-3">
+                Full Name
+              </label>
+              <input
+                className="form-control p-4"
+                type="text"
+                id="fullname"
+                name="fullname"
+                value={data.fullname}
+                autoComplete="off"
+                onChange={this.onChange}
+              />
+              {errors.fullname && <InlineError text={errors.fullname} />}
             </div>
-            <div className="text-center mb-3" style={{ color: "#797979" }}>
-              -- or --
+            <div className="form-group col-6 p-0 pl-2">
+              <label htmlFor="username" className="mb-3">
+                Username
+              </label>
+              <input
+                className="form-control p-4"
+                type="text"
+                id="username"
+                name="username"
+                autoComplete="off"
+                value={data.username}
+                onChange={this.onChange}
+              />
+              {errors.username && <InlineError text={errors.username} />}
             </div>
-            <form onSubmit={this.onSubmit}>
-              <div className="row m-0">
-                <div className="form-group col-6 p-0 pr-2">
-                  <label htmlFor="fullname" className="mb-3">
-                    Full Name
-                  </label>
-                  <input
-                    className="form-control p-4"
-                    type="text"
-                    id="fullname"
-                    name="fullname"
-                    value={data.fullname}
-                    autoComplete="off"
-                    onChange={this.onChange}
-                  />
-                  {errors.fullname && <InlineError text={errors.fullname} />}
-                </div>
-                <div className="form-group col-6 p-0 pl-2">
-                  <label htmlFor="username" className="mb-3">
-                    Username
-                  </label>
-                  <input
-                    className="form-control p-4"
-                    type="text"
-                    id="username"
-                    name="username"
-                    autoComplete="off"
-                    value={data.username}
-                    onChange={this.onChange}
-                  />
-                  {errors.username && <InlineError text={errors.username} />}
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="email" className="mb-3">
-                  Email
-                </label>
-                <input
-                  className="form-control p-4"
-                  type="email"
-                  id="email"
-                  name="email"
-                  autoComplete="off"
-                  value={data.email}
-                  onChange={this.onChange}
-                />
-                {errors.email && <InlineError text={errors.email} />}
-              </div>
-              <div className="form-group">
-                <label htmlFor="password" className="mb-3">
-                  Password
-                </label>
-                <input
-                  className="form-control p-4"
-                  type="password"
-                  id="password"
-                  name="password"
-                  autoComplete="off"
-                  placeholder="6+ characters"
-                  value={data.password}
-                  onChange={this.onChange}
-                />
-                {errors.password && <InlineError text={errors.password} />}
-              </div>
-              <button className="btn mt-3 px-5 py-3 cta-primary" type="submit">
-                Create Account
-              </button>
-            </form>
           </div>
+          <div className="form-group">
+            <label htmlFor="email" className="mb-3">
+              Email
+            </label>
+            <input
+              className="form-control p-4"
+              type="email"
+              id="email"
+              name="email"
+              autoComplete="off"
+              value={data.email}
+              onChange={this.onChange}
+            />
+            {errors.email && <InlineError text={errors.email} />}
+          </div>
+          <div className="form-group">
+            <label htmlFor="password" className="mb-3">
+              Password
+            </label>
+            <input
+              className="form-control p-4"
+              type="password"
+              id="password"
+              name="password"
+              autoComplete="off"
+              placeholder="6+ characters"
+              value={data.password}
+              onChange={this.onChange}
+            />
+            {errors.password && <InlineError text={errors.password} />}
+          </div>
+          <div className="mt-4">
+            <button className="btn px-5 py-2 cta-primary w-50" type="submit">
+              Create Account
+            </button>
+            <span className="ml-3">
+              Already a member? <Link to="/signin">Sign in</Link>
+            </span>
+          </div>
+        </form>
+      </div>
     );
   }
 }

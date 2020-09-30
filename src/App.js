@@ -11,7 +11,7 @@ const App = ({ location }) => (
   <div className="container-fluid">
     <Route location={location} path="/" exact component={HomePage} />
     <Route location={location} path="/home" exact component={HomePage} />
-    <GuestRoute location={location} path="/login" exact component={LoginPage} />
+    <GuestRoute location={location} path="/signin" exact component={LoginPage} />
     <GuestRoute location={location} path="/signup" exact component={SignupPage} />
     <UserRoute
       location={location}
